@@ -8,23 +8,27 @@ RSpec.describe 'one' do
     expect(exactly_one).to eq(true)
   end
 
-  xit 'not even one ring' do
+  it 'not even one ring' do
     ornaments = ["bracelet", "anklet", "earring"]
     exactly_one_ring = ornaments.one? do |ornament|
-      # Your code goes here
+      ornament == "ring"
     end
     expect(exactly_one_ring).to eq(false)
   end
 
-  xit 'not just one ring' do
+  it 'not just one ring' do
     ornaments = ["bracelet", "ring", "ring", "anklet", "earring"]
-    # Your code goes here
+    exactly_one_ring = ornaments.one? do |ornament|
+      ornament == "ring"
+    end
     expect(exactly_one_ring).to eq(false)
   end
 
   xit 'one time' do
     words = ["morning", "time", "evening", "noon", "dusk", "dawn"]
-    # Your code goes here
+    exactly_one_time = words.one? do |word|
+
+    end
     expect(exactly_one_time).to eq(true)
   end
 

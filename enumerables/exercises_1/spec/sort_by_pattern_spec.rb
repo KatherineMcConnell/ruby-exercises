@@ -14,11 +14,11 @@ RSpec.describe 'sort_by pattern' do
     expect(sorted).to eq(["Bacon", "broccoli", "candy", "Carrots", "FISH"])
   end
 
-  xit 'alphabetically by last letter' do
+  it 'alphabetically by last letter' do
     things = ["pill", "box", "glass", "water", "sponge"]
     transformed = []
     things.each do |thing|
-      # Your code goes here
+      transformed << [thing.reverse, thing]
     end
     transformed = transformed.sort
     sorted = []
@@ -28,10 +28,12 @@ RSpec.describe 'sort_by pattern' do
     expect(sorted).to eq(["sponge", "pill", "water", "glass", "box"])
   end
 
-  xit 'sort by distance' do
+  it 'sort by distance' do
     distances = ["1cm", "9cm", "30cm", "4cm", "2cm"]
     transformed = []
-    # Your code goes here
+    distances.each do |distance|
+      transformed << [distance.delete("cm").to_i, distance)]
+    end
     transformed = transformed.sort
     sorted = []
     transformed.each do |sort_key, distance|

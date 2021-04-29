@@ -10,20 +10,22 @@ RSpec.describe 'one pattern' do
     expect(exactly_one).to eq(true)
   end
 
-  xit 'not even one ring' do
+  it 'not even one ring' do
     ornaments = ["bracelet", "anklet", "earring"]
     count = 0
     ornaments.each do |ornament|
-      # Your code goes here
+      count += 1 if ornament == "ring"
     end
     exactly_one_ring = count == 1
     expect(exactly_one_ring).to eq(false)
   end
 
-  xit 'not just one ring' do
+  it 'not just one ring' do
     ornaments = ["bracelet", "ring", "ring", "anklet", "earring"]
     count = 0
-    # Your code goes here
+    ornaments.each do |ornament|
+      count += 1 if ornament == "ring"
+    end
     exactly_one_ring = count == 1
     expect(exactly_one_ring).to eq(false)
   end
